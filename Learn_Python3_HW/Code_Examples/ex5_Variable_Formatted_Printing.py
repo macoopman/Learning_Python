@@ -15,6 +15,7 @@ weight = 176
 eyes = "Green"
 teeth = "White"
 hair = "Brown"
+f_string = f"His teeth are usally {teeth} depending on the coffee"
 
 # Error note: there cannot be a space b/t f and " " --> f"" NOT f ""
 print(f"Let's talk about {name}.")
@@ -24,7 +25,7 @@ print(f"He's {weight} pounds heavy")
 print(f"He's {round(lbs_to_kilo(weight))} kilos heavy")
 print("Actually that's not too heavy")
 print(f"He's got {eyes} eyes and {hair} hair")
-print(f"His teeth are usally {teeth} depending on the coffee")
+print(f_string)
 
 # this line is trickey, try to get it exactly right
 
