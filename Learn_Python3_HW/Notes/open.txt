@@ -1,0 +1,74 @@
+
+OPEN
+
+open(
+    file,
+    mode = 'r',
+    buffering = -1,
+    encoding = None,
+    errors = None,
+    newline = None,
+    closefd = True,
+    opener = None
+    )
+
+    FILE
+        - either a "text" or "byte string"
+        - path must be included if not in the current directory
+        - file descriptor? Wrapping?
+
+    MODE (optional)
+        - Specifies the mode in which the file is opened
+
+        Options:
+        - 'r' -> Open for reading in text mode
+        - 'w' -> Open for writing
+                    - truncating the file first means it overwrites a file that already exists
+        - 'x' -> Create new file and open it for writing
+        - 'a' -> Appending to a end of a file
+        - 'b' -> Binary
+        - 't' -> Text Mode: Specifies encoding
+                    - if not specified then defaults to the platform default encoding
+        - '+' -> Open a disk file for updating (read/write)
+
+        Default Modes:
+            - text: 'rt' open for reading text
+                    - contents of file returned as strings
+
+            - binary: 'w+b' opens and truncates the file to 0 bytes
+                - python distinguishes b/t file of text and files of binary
+
+
+    BUFFERING (optional)
+        - Sets the buffer policy
+        - 0 = no buffer (binary only)
+        - 1 = line buffering (text mode)
+        - int > 1 = fixed-size chunk buffer
+
+    ENCODING
+        - name of encoding / decoding used on files
+        - if system encoding is default (leave blank)
+
+    ERRORS
+        - How to hand encoding errors
+        - NOT for binary
+        - default is a strict version
+        - can be turned off but could lead to data loss - just leave default
+
+    NEWLINE
+        - controls how universal newlines work (text mode)
+        - input:
+            - 'None' : '\n', '\r', '\r\n' all == '\n'
+            - ' ' : all line endings are returned untranslated
+
+        - output:
+            - 'None': all '\n' are translated to the system standard
+
+    CLOSEFD
+        - FALSE : underlying file descriptor will be kept open when the file is closed
+        - Must be 'True' if file name is given
+
+    OPENER
+        -
+
+    
