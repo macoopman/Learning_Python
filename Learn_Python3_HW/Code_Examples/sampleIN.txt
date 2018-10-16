@@ -1,21 +1,4 @@
-This is a bunch of input text brah
-This is a bunch of input text brah
-
-This is a bunch of input text brah
-
-This is a bunch of input text brah
-
-This is a bunch of input text brah
-
-This is a bunch of input text brah
-
-
-This is a bunch of input text brah
-
-This is a bunch of input text brah
-
-v
-v
-v
-
-This is a bunch of input text brah
+1. line 1
+2. line 2
+3. line 3
+4. line 4
