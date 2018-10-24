@@ -1,0 +1,225 @@
+This is a running document of new things I find in Python or things I think are cool.
+
+PRINTING
+    - String Concatenation:
+        ex. -> print("There are", cars, "cars available.")
+        Concatenation is done with the ',' comma.
+
+    - end =
+        - With "end=" we can change the last char of a string.
+        - ie. remove the '\n' and input any char. Can be another escape sequence,
+            spaces, etc
+
+    - Triple Quotes
+        - Print a formatted block of text
+        - Will print exactly the same is it is written. Spaces, tabs, and all
+
+--------------------------------------------------------------------------------
+
+STRINGS
+    - strings are created as objects
+
+FORMATTING STRINGS
+    - use the .format() method
+        ex -> joke_evaluation = "Isn't that joke so funny?! {}"
+              joke_evaluation.format(hilarious)
+              * inputs the variable (hilarious) into the {} formatter
+              * can also be use directly on a string. Does not have to be the variables
+        - also take formatting values like in C
+            -> {:.2f} 2 digits after the decimal. use ":" operator
+
+    - use the f"" formatting
+        ex. -> print(f"He's {height} inches tall")
+            - must use the (f) prior to the quote
+            - Input variables by using the curly brackets with the var name inside
+
+
+--------------------------------------------------------------------------------
+
+INPUT
+    - input()
+        - function grabs from the stdio and returns a "string" representation of the input
+        ex. -> tempVar = input()
+
+    - Converting string to int, double, etc
+        - wrap the input() function inside of a conversion function
+        i.e.-> intVar = int(input())
+
+    - Prompting
+        - To provide prompt to users, prior to reading input, simply add
+            string as the input() parameter
+        ex -> age = input("How old are you? ")
+
+--------------------------------------------------------------------------------
+
+COMMAND-LINE ARGUMENTS
+    - from the system library import argv (argument vector)
+    i.e. -> from sys import argv
+
+    - Must provide variable that the aruments can be read into.
+        - The first one, "script", is a throwaway it hold the name of the script
+            that is being ran.
+        ex -> script, first, second, third = argv
+
+--------------------------------------------------------------------------------
+
+
+FILES
+    - File are "file object". That means we run methods on them
+
+    - Opening
+        - create and assign a file object to a variables
+            ex -> txt = open(filename)
+        - Flags
+            - 'w': allows file object to be written to
+            - other flags for reading, etc
+
+    - Reading
+        - Using the ".read()" function the read the file
+        - Can read into a variable or right to a print statement
+
+        - .readline()
+            - returns one line at a time.
+            - Can perform computation or simply print
+
+    - Writing
+        - .write( stuff_to_be_written_to_file)
+            - can take a variable or string directly as parameter
+
+    - Truncating
+        - .truncate()
+            - Overwrites the file with an new file of the same name.
+            - I.E. clears all data from file
+
+    - Seek
+        - .seek(int)
+        - seek works in bits. To go to the beginning of the file, ie bit 0, do -> .seek(0)
+
+    - Closing
+        - .close()
+            - close all files when down
+
+--------------------------------------------------------------------------------
+
+FUNCTIONS
+    - Basic Template
+        def functionName(variableName):
+            return value
+    - No {}. All must be indented equally
+    - No types, just the var name as the parameter
+
+    - Multiple Returns
+        - Has the ability to return more than one value.
+        - Make sure you have variables ready for them just like argv
+
+--------------------------------------------------------------------------------
+
+
+ENCODING/DECODING
+    - Python uses UTF-8 for all strings
+    - Strings get "Encoded" to unicode
+    - Unicode gets "Decoded" to strings
+        ex -> raw_bytes = next_lang.encode(encoding, errors=errors)
+            takes in a string and returns an encode version
+        ex -> cooked_string = raw_bytes.decode(encoding, errors=errors)
+            takes in a encoded string and returns a human readable string
+
+
+--------------------------------------------------------------------------------
+
+DOCUMENTATION COMMENTS
+    - Inside functions using the triple-quote auto populates the help file for your script
+    ex -> """ This is a comment about the function"""
+
+--------------------------------------------------------------------------------
+RULES FOR IF-STATEMENTS
+
+    1) Every if-statement MUST have an else
+    2) If else should NEVER run -> Use a "DIE" function that prints an error message
+    3) Never nest more than 2 deep
+    4) Treat if-elif-else like paragraphs -> blank lines before and after
+    5) Simple boolean test. If complex then use variables
+
+--------------------------------------------------------------------------------
+RULES FOR LOOPS
+
+    1) Use "while-loops" only to loop forever -> not used often
+    2) Use "for-loops" for all other kinds of looping
+
+--------------------------------------------------------------------------------
+
+LISTS
+    - Copy list
+        - Full Copy: destination = source[:]
+            * [:] is range -> meaning copy from beginning to end
+
+        - Partial Copy: destination = source[1:6]
+            * copies the source from index 1 to 5
+
+    - Range  -- range(beginning, end, step)
+        - ex -> range(0,100) -> makes a "COUNTER" from 0 to 99
+        - Make a counter that goes from one number to another
+        - Can specify a step with the 3rd parameter
+
+    - List made with Range
+        * ex -> myList = list(range(0,50))
+            - creates a list the numbers 0 to 49
+
+    - Append
+        - ex. -> myList.append(value)
+        - Add a new value to the given list.
+        - Adds to end of list
+
+    - Pop
+        - removes, and returns, the last element of the list
+        * ex -> myList.pop()
+
+    - Join
+        - Concatenation of list with a given separator
+        * ex -> " ".join(myList)      <- joins whole list with a space b/t each element
+        * ex -> "#".join(myList[3:5]) <- joins a range using the '#'
+
+
+--------------------------------------------------------------------------------
+DICTIONARY
+    - stores key/value pairs <-- tuples
+    * ex -> myDict = {'key' : 'value', 'age' : '35', 'name' : 'Mike'}
+
+    - Adding to dictionary
+        - myDict['key'] = 'value'
+
+    - Getting information from dictionary
+        - myDict['key']
+
+        Get
+            - function that looks for key/value pair and return value if it exist or "None" if does not Exist
+            - myDict.get('key') <- returns 'None' if not in dictionary
+            - myDict.get('key', 'Does Not Exist') <- returns 'Does Not Exist' if not in dictionary
+
+        Items
+            - returns a representation of the items in the dictionary
+
+    - Looping Through Dictionary
+        - initialize variable for both parts of the tuple
+        * ex -> for key, value in list(myDict.items())
+            - passing the items into a list makes it easier to work with 
+--------------------------------------------------------------------------------
+
+SYSTEM
+
+    - exit
+        - exit(0) -> abort. No error
+        - exit(1) -> about. Error
+--------------------------------------------------------------------------------
+
+MISC
+
+    - .split('splitValue')
+        returns a "list" of object that have been split by the given parameter
+        ex -> x = y.split(' ') #splits at every space
+
+    - .sorted()
+        sorts the list object is is called on
+
+    - .pop(index)
+        - removes and returns a value from a list

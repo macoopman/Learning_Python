@@ -1,6 +1,9 @@
 
 OPEN
 
+Creates a "File Object" -> check that for methods list
+
+
 open(
     file,
     mode = 'r',
@@ -70,5 +73,3 @@ open(
 
     OPENER
         -
-
-    
