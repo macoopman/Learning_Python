@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+# instruct the system wher the python interpreter lives
+
+
+print('The Bright Side ' + 'of Life...')
